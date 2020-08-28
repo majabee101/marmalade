@@ -21,7 +21,7 @@ def homePage():
 
     print("user connected to homepage")
 
-    return render_template("homepage.html")
+    return render_template("homepage.html",user= username, budget=currentBudget)
 
 
 @app.route("/budget", methods=["GET", "POST"])
