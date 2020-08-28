@@ -31,9 +31,35 @@ def foodPage():
 
     return render_template("foodpage.html")
 
+@app.route("/analytics", methods=["GET", "POST"])
+def Analytics():
+
+    print("User connected to the foodpage")
+
+    return render_template("analytics.html")
+
+@app.route("/map", methods=["GET", "POST"])
+def Map():
+
+    print("User connected to the map")
+
+    return render_template("map.html")
 
 
+@app.route("/recipes", methods=["GET", "POST"])
+def Recipes():
 
+    print("User connected to the recipe page")
+
+    return render_template("recipes.html")
+
+
+@app.route("/vouchers", methods=["GET", "POST"])
+def Vouchers():
+
+    print("User connected to the voucher page")
+
+    return render_template("vouchers.html")
 
 @app.route("/budget", methods=["GET", "POST"])
 def changeBudget():
