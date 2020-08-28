@@ -1,27 +1,19 @@
 from flask import Flask, render_template, request, jsonify
 
-
 app = Flask(__name__, static_folder="./templates", static_url_path="/templates")
 app.debug=True
 
-username = "Samj"
-currentBudget = 350
+username = "bob"
+currentBudget = 350.0
 
 
 @app.route("/")
-def mainPage():
-
-    print("User connected to the mainpage")
-
-
-    return render_template("mainpage.html", user= username, budget=currentBudget)
-
-@app.route("/homepage", methods=["GET", "POST"])
 def homePage():
 
-    print("user connected to homepage")
+    print("User connected to the homepage")
 
-    return render_template("homepage.html",user= username, budget=currentBudget)
+
+    return render_template("homepage.html", user= username, budget=currentBudget)
 
 
 @app.route("/budget", methods=["GET", "POST"])
@@ -34,8 +26,6 @@ def changeBudget():
         return jsonify({"new_budget":newBudget})
 
     return render_template("budget.html", user= username, budget=currentBudget)
-
-
 
 
 if __name__ == "__main__":
